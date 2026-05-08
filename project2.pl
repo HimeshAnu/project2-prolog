@@ -18,3 +18,19 @@ assign_stations([ws(Station, Min, Max)|RestStations], Shift, Available, Remainin
     between(Min, Max, Count),
     choose_valid_workers(Count, Available, Shift, Station, Workers, AfterStation),
     assign_stations(RestStations, Shift, AfterStation, Remaining, RestSchedule).
+    choose_valid_workers(0, Available, _, _, [], Available).
+
+choose_valid_workers(Count, [Employee|Rest], Shift, Station,
+                     [Employee|Workers], Remaining) :-
+    Count > 0,
+    can_work(Employee, Shift, Station),
+    Count1 is Count - 1,
+    choose_valid_workers(Count1, Rest, Shift, Station, Workers, Remaining).
+
+choose_valid_workers(Count, [Employee|Rest], Shift, Station,
+                     Workers, [Employee|Remaining]) :-
+    Count > 0,
+    choose_valid_workers(Count, Rest, Shift, Station, Workers, Remaining).
+can_work(Employee, Shift, Station) :-
+    \+ avoid_shift(Employee, Shift),
+    \+ avoid_workstation(Employee, Station).

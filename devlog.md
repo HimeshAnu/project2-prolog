@@ -3,3 +3,6 @@ Added the main prolog files and the other main files. Began by adding the plan/1
 
 5/8/2026 1:52 pm
 Added the make_shift/4 predicate. This part finds all the workstations that are active during a shift. I also implemented the assign_stations/5 which assigns employees to every active workstation. This took a lot longer than I had planned for and will likely continue working on this until I finish the project. 
+
+5/8/2026 3:26 pm
+Added valid workers so it selects employees from available employees. It will either assign an employee if they are valid for that shift and workstation or it will skip them and have them available later. I believe the project should be done now but I need to test it out and then do bug fixes. 
