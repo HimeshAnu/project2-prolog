@@ -6,3 +6,6 @@ Added the make_shift/4 predicate. This part finds all the workstations that are 
 
 5/8/2026 3:26 pm
 Added valid workers so it selects employees from available employees. It will either assign an employee if they are valid for that shift and workstation or it will skip them and have them available later. I believe the project should be done now but I need to test it out and then do bug fixes. 
+
+5/8/2026 4:27 pm
+The code should work but doing the example outputs takes a long time for it to get an output. Sometimes the program will just crash. If I use simpler queries it works as intended. Bug fixes should be done and I believe this is good enough for submission. 

@@ -20,6 +20,7 @@ assign_stations([ws(Station, Min, Max)|RestStations], Shift, Available, Remainin
     assign_stations(RestStations, Shift, AfterStation, Remaining, RestSchedule).
     choose_valid_workers(0, Available, _, _, [], Available).
 
+
 choose_valid_workers(Count, [Employee|Rest], Shift, Station,
                      [Employee|Workers], Remaining) :-
     Count > 0,
